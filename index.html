@@ -7,137 +7,657 @@
     <title>Acute and Emergency Care in Sports Medicine, Second Edition | Web Resource</title>
     <style>
       :root {
-        --forest: #25713b; --forest-deep: #174d2b; --field: #3a914d; --gold: #f4d17d;
-        --violet: #3e4894; --charcoal: #171b1a; --ink: #18201c; --muted: #5d6861;
-        --paper: #fffef9; --mist: #f2f5ee; --line: #d6ddd4; --white: #ffffff;
+        --forest: #25713b;
+        --forest-deep: #174d2b;
+        --field: #3a914d;
+        --gold: #f4d17d;
+        --violet: #3e4894;
+        --charcoal: #171b1a;
+        --ink: #18201c;
+        --muted: #5d6861;
+        --paper: #fffef9;
+        --mist: #f2f5ee;
+        --line: #d6ddd4;
+        --white: #ffffff;
         --content-width: 1180px;
       }
-      * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
-      body { min-width: 320px; margin: 0; background: var(--mist); color: var(--ink); font-family: Arial, Helvetica, sans-serif; text-rendering: optimizeLegibility; }
-      a { color: inherit; text-decoration: none; }
-      button, input { font: inherit; }
-      [hidden] { display: none !important; }
-      .skip-link { position: fixed; z-index: 50; top: 12px; left: 12px; padding: 10px 14px; background: var(--gold); color: var(--charcoal); font-weight: 800; transform: translateY(-150%); }
-      .skip-link:focus { transform: translateY(0); }
-      .page-shell, .interior-page { min-height: 100vh; }
-      .hero { position: relative; overflow: hidden; background: linear-gradient(120deg, rgb(0 0 0 / 40%), transparent 48%), linear-gradient(135deg, var(--charcoal) 0 38%, var(--forest-deep) 38% 56%, var(--forest) 56% 100%); color: var(--white); }
-      .hero::before { position: absolute; width: 38vw; height: 38vw; min-width: 340px; min-height: 340px; right: -8vw; bottom: -24vw; border: 1px solid rgb(255 255 255 / 15%); border-radius: 50%; box-shadow: 0 0 0 54px rgb(255 255 255 / 4%), 0 0 0 108px rgb(255 255 255 / 3%); content: ''; }
-      .hero::after { position: absolute; inset: auto 0 0; height: 10px; background: linear-gradient(90deg, var(--gold) 0 54%, var(--violet) 54% 72%, #91c48d 72%); content: ''; }
-      .site-nav, .hero-grid, .activities, .site-footer { width: min(var(--content-width), calc(100% - 48px)); margin-inline: auto; }
-      .site-nav, .interior-nav { display: flex; min-height: 70px; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid rgb(255 255 255 / 22%); }
-      .wordmark { display: inline-flex; align-items: center; gap: 12px; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.11em; text-transform: uppercase; }
-      .wordmark-mark { display: grid; width: 38px; height: 38px; place-items: center; border: 2px solid var(--gold); color: var(--gold); font-size: 0.7rem; letter-spacing: 0; }
-      .nav-links { display: flex; align-items: center; gap: 28px; }
-      .nav-link { padding: 10px 0; font-size: 0.84rem; font-weight: 700; }
-      .nav-link:hover, .nav-link:focus-visible { color: var(--gold); }
-      .hero-grid { position: relative; z-index: 1; display: grid; min-height: 390px; grid-template-columns: minmax(0, 1fr) auto; gap: 56px; align-items: center; padding: 58px 0 68px; }
-      .hero-copy { max-width: 860px; }
-      .eyebrow { margin: 0 0 16px; color: var(--gold); font-size: 0.76rem; font-weight: 800; letter-spacing: 0.25em; text-transform: uppercase; }
-      .hero h1 { margin: 0; font-size: clamp(2.8rem, 6.1vw, 5.5rem); font-weight: 800; letter-spacing: -0.06em; line-height: 0.92; }
-      .hero h1 span { display: block; }
-      .hero-authors { margin: 28px 0 0; color: #dce8dd; font-size: 1rem; line-height: 1.55; }
-      .activities { padding: 52px 0 72px; }
-      .section-heading { max-width: 760px; margin-bottom: 28px; }
-      .eyebrow-dark { margin-bottom: 12px; color: var(--forest); }
-      .section-heading h2 { margin: 0; font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 800; letter-spacing: -0.045em; line-height: 1; }
-      .section-intro { margin: 16px 0 0; color: var(--muted); line-height: 1.65; }
-      .activity-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
-      .activity-card { display: flex; min-height: 300px; flex-direction: column; justify-content: space-between; padding: 30px; border: 1px solid var(--line); border-top: 8px solid var(--forest); background: var(--paper); box-shadow: 0 15px 40px rgb(18 50 28 / 8%); transition: transform 180ms ease, box-shadow 180ms ease; }
-      .activity-card:nth-child(2) { border-top-color: var(--violet); }
-      .activity-card:hover { transform: translateY(-5px); box-shadow: 0 22px 48px rgb(18 50 28 / 14%); }
-      .activity-card h3 { margin: 24px 0 12px; font-size: clamp(1.7rem, 2.8vw, 2.25rem); letter-spacing: -0.045em; line-height: 1.03; }
-      .activity-card p { margin: 0; color: var(--muted); line-height: 1.65; }
-      .card-topline { display: flex; justify-content: space-between; align-items: center; }
-      .activity-number { color: #89948c; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.16em; }
-      .card-count { padding: 7px 10px; background: var(--mist); color: var(--forest-deep); font-size: 0.72rem; font-weight: 800; text-transform: uppercase; }
-      .activity-action, .back-link { display: inline-flex; align-items: center; gap: 11px; margin-top: 24px; color: var(--forest); font-size: 0.8rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
-      .activity-arrow { font-size: 1.2rem; transition: transform 180ms ease; }
-      .activity-card:hover .activity-arrow { transform: translateX(5px); }
-      .site-footer { display: flex; align-items: center; justify-content: space-between; gap: 40px; padding: 40px 0; border-top: 1px solid var(--line); }
-      .footer-logo img { display: block; width: min(220px, 54vw); height: auto; }
-      .footer-meta { color: var(--muted); font-size: 0.78rem; }
-      .footer-meta { text-align: right; }
-      .footer-meta p { margin: 0 0 7px; }
-      .footer-meta a { color: var(--forest); font-weight: 800; }
-      .interior-page { background: linear-gradient(90deg, var(--forest) 0 10px, transparent 10px), var(--paper); }
-      .interior-nav, .interior-hero, .resource-panel { width: min(1060px, calc(100% - 48px)); margin-inline: auto; }
-      .interior-nav { min-height: 84px; border-bottom-color: var(--line); }
-      .wordmark-dark { color: var(--forest-deep); }
-      .wordmark-dark .wordmark-mark { border-color: var(--forest); color: var(--forest); }
-      .interior-nav-link { color: var(--forest); font-size: 0.8rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
-      .interior-hero { padding: 72px 0 52px; }
-      .interior-heading h1 { margin: 0; font-size: clamp(3rem, 7vw, 5.7rem); font-weight: 800; letter-spacing: -0.06em; line-height: 0.94; }
-      .interior-heading > p:last-child { max-width: 760px; margin: 24px 0 0; color: var(--muted); font-size: 1.08rem; line-height: 1.65; }
-      .resource-panel { padding: 42px; border-top: 8px solid var(--gold); background: var(--mist); }
-      .status-label { margin: 0 0 13px; color: var(--forest); font-size: 0.73rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; }
-      .resource-panel h2 { margin: 0 0 12px; font-size: clamp(1.8rem, 4vw, 2.75rem); letter-spacing: -0.04em; }
-      .resource-panel > p:not(.status-label) { max-width: 760px; margin: 0; color: var(--muted); line-height: 1.65; }
-      .video-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 30px; }
-      .video-item { display: grid; grid-template-columns: 66px minmax(0, 1fr) auto; gap: 16px; align-items: center; min-height: 106px; padding: 15px 18px 15px 0; border: 1px solid var(--line); background: var(--white); text-align: left; }
-      .video-number { display: grid; align-self: stretch; place-items: center; background: var(--forest-deep); color: var(--gold); font-size: 0.78rem; font-weight: 900; }
-      .video-title { font-size: 0.98rem; font-weight: 800; line-height: 1.35; }
-      .video-meta { display: block; margin-top: 7px; color: var(--muted); font-size: 0.75rem; font-weight: 400; }
-      .video-play { display: grid; width: 36px; height: 36px; place-items: center; border: 2px solid var(--forest); border-radius: 50%; color: var(--forest); font-size: 0.78rem; }
-      .video-item:hover { border-color: var(--forest); box-shadow: 0 8px 22px rgb(19 65 34 / 10%); }
-      .video-item.is-active { border-color: var(--violet); box-shadow: inset 0 0 0 2px var(--violet), 0 8px 22px rgb(19 65 34 / 10%); }
-      .video-item.is-active .video-play { border-color: var(--violet); background: var(--violet); color: var(--white); }
-      .video-player-panel { margin-top: 30px; padding: 22px; background: var(--charcoal); color: var(--white); }
-      .video-player-header { display: flex; align-items: start; justify-content: space-between; gap: 24px; margin-bottom: 16px; }
-      .video-player-header h3 { margin: 4px 0 0; font-size: clamp(1.25rem, 3vw, 1.8rem); line-height: 1.2; }
-      .video-player-label { margin: 0; color: var(--gold); font-size: 0.7rem; font-weight: 900; letter-spacing: 0.14em; text-transform: uppercase; }
-      .video-close { flex: 0 0 auto; padding: 8px 10px; border: 1px solid rgb(255 255 255 / 45%); background: transparent; color: var(--white); cursor: pointer; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; }
-      .video-close:hover { border-color: var(--gold); color: var(--gold); }
-      .video-frame-wrap { position: relative; width: 100%; padding-top: 56.25%; overflow: hidden; background: #000; }
-      .video-frame-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-      .connection-note { margin-top: 22px !important; padding: 14px 16px; border-left: 4px solid var(--gold); background: var(--white); font-size: 0.88rem; }
-      .tool-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 30px; }
-      .tool-card { display: flex; min-height: 190px; flex-direction: column; padding: 22px; border: 1px solid var(--line); background: var(--white); }
-      .tool-card h3 { margin: 12px 0 8px; font-size: 1.25rem; }
-      .tool-card p { margin: 0; color: var(--muted); font-size: 0.9rem; line-height: 1.55; }
-      .tool-link { margin-top: auto; padding-top: 20px; color: var(--forest); font-size: 0.76rem; font-weight: 900; text-transform: uppercase; }
-      .tool-card:hover { border-color: var(--violet); }
-      .reference-section + .reference-section { margin-top: 42px; padding-top: 42px; border-top: 1px solid var(--line); }
-      .reference-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 18px; }
-      .reference-heading h2 { margin: 0; font-size: 1.65rem; }
-      .search-label { display: grid; gap: 6px; color: var(--muted); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
-      .search-input { width: min(320px, 70vw); padding: 11px 13px; border: 1px solid #aeb9af; background: var(--white); color: var(--ink); }
-      .table-wrap { overflow-x: auto; border: 1px solid var(--line); background: var(--white); }
-      table { width: 100%; border-collapse: collapse; }
-      th, td { padding: 11px 14px; border-bottom: 1px solid #e4e9e2; text-align: left; }
-      th { position: sticky; top: 0; background: var(--forest-deep); color: var(--white); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; }
-      td:first-child { width: 27%; color: var(--forest-deep); font-weight: 800; }
-      tbody tr:last-child td { border-bottom: 0; }
-      tbody tr:nth-child(even) { background: #f7f9f5; }
-      .empty-result { padding: 22px; color: var(--muted); text-align: center; }
-      .button-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
-      .button { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; padding: 10px 16px; border: 2px solid var(--forest); background: var(--forest); color: var(--white); cursor: pointer; font-weight: 800; }
-      .back-link { margin-top: 34px; }
-      .toast { position: fixed; z-index: 60; right: 20px; bottom: 20px; max-width: 390px; padding: 15px 18px; background: var(--charcoal); color: var(--white); box-shadow: 0 10px 35px rgb(0 0 0 / 25%); font-size: 0.88rem; line-height: 1.45; }
-      :focus-visible { outline: 3px solid var(--violet); outline-offset: 4px; }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        min-width: 320px;
+        margin: 0;
+        background: var(--mist);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+        text-rendering: optimizeLegibility;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button,
+      input {
+        font: inherit;
+      }
+      [hidden] {
+        display: none !important;
+      }
+      .skip-link {
+        position: fixed;
+        z-index: 50;
+        top: 12px;
+        left: 12px;
+        padding: 10px 14px;
+        background: var(--gold);
+        color: var(--charcoal);
+        font-weight: 800;
+        transform: translateY(-150%);
+      }
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+      .page-shell,
+      .interior-page {
+        min-height: 100vh;
+      }
+      .hero {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(120deg, rgb(0 0 0 / 40%), transparent 48%), linear-gradient(135deg, var(--charcoal) 0 38%, var(--forest-deep) 38% 56%, var(--forest) 56% 100%);
+        color: var(--white);
+      }
+      .hero::before {
+        position: absolute;
+        width: 38vw;
+        height: 38vw;
+        min-width: 340px;
+        min-height: 340px;
+        right: -8vw;
+        bottom: -24vw;
+        border: 1px solid rgb(255 255 255 / 15%);
+        border-radius: 50%;
+        box-shadow:
+          0 0 0 54px rgb(255 255 255 / 4%),
+          0 0 0 108px rgb(255 255 255 / 3%);
+        content: "";
+      }
+      .hero::after {
+        position: absolute;
+        inset: auto 0 0;
+        height: 10px;
+        background: linear-gradient(90deg, var(--gold) 0 54%, var(--violet) 54% 72%, #91c48d 72%);
+        content: "";
+      }
+      .hero-grid,
+      .activities,
+      .site-footer {
+        width: min(var(--content-width), calc(100% - 48px));
+        margin-inline: auto;
+      }
+      .hero-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        min-height: 390px;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 56px;
+        align-items: center;
+        padding: 58px 0 68px;
+      }
+      .hero-copy {
+        max-width: 860px;
+      }
+      .eyebrow {
+        margin: 0 0 16px;
+        color: var(--gold);
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+      }
+      .hero h1 {
+        margin: 0;
+        font-size: clamp(2.8rem, 6.1vw, 5.5rem);
+        font-weight: 800;
+        letter-spacing: -0.06em;
+        line-height: 0.92;
+      }
+      .hero h1 span {
+        display: block;
+      }
+      .hero-authors {
+        margin: 28px 0 0;
+        color: #dce8dd;
+        font-size: 1rem;
+        line-height: 1.55;
+      }
+      .activities {
+        padding: 52px 0 72px;
+      }
+      .section-heading {
+        max-width: 760px;
+        margin-bottom: 28px;
+      }
+      .eyebrow-dark {
+        margin-bottom: 12px;
+        color: var(--forest);
+      }
+      .section-heading h2 {
+        margin: 0;
+        font-size: clamp(2rem, 3vw, 2.8rem);
+        font-weight: 800;
+        letter-spacing: -0.045em;
+        line-height: 1;
+      }
+      .section-intro {
+        margin: 16px 0 0;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+      .activity-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+      }
+      .activity-card {
+        display: flex;
+        min-height: 300px;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 30px;
+        border: 1px solid var(--line);
+        border-top: 8px solid var(--forest);
+        background: var(--paper);
+        box-shadow: 0 15px 40px rgb(18 50 28 / 8%);
+        transition:
+          transform 180ms ease,
+          box-shadow 180ms ease;
+      }
+      .activity-card:nth-child(2) {
+        border-top-color: var(--violet);
+      }
+      .activity-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 22px 48px rgb(18 50 28 / 14%);
+      }
+      .activity-card h3 {
+        margin: 24px 0 12px;
+        font-size: clamp(1.7rem, 2.8vw, 2.25rem);
+        letter-spacing: -0.045em;
+        line-height: 1.03;
+      }
+      .activity-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+      .card-topline {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .activity-number {
+        color: #89948c;
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+      }
+      .card-count {
+        padding: 7px 10px;
+        background: var(--mist);
+        color: var(--forest-deep);
+        font-size: 0.72rem;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+      .activity-action,
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 11px;
+        margin-top: 24px;
+        color: var(--forest);
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .activity-arrow {
+        font-size: 1.2rem;
+        transition: transform 180ms ease;
+      }
+      .activity-card:hover .activity-arrow {
+        transform: translateX(5px);
+      }
+      .site-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        padding: 40px 0;
+        border-top: 1px solid var(--line);
+      }
+      .footer-logo img {
+        display: block;
+        width: min(220px, 54vw);
+        height: auto;
+      }
+      .footer-meta {
+        color: var(--muted);
+        font-size: 0.78rem;
+      }
+      .footer-meta {
+        text-align: right;
+      }
+      .footer-meta p {
+        margin: 0 0 7px;
+      }
+      .footer-meta a {
+        color: var(--forest);
+        font-weight: 800;
+      }
+      .interior-page {
+        background: linear-gradient(90deg, var(--forest) 0 10px, transparent 10px), var(--paper);
+      }
+      .interior-hero,
+      .resource-panel {
+        width: min(1060px, calc(100% - 48px));
+        margin-inline: auto;
+      }
+      .interior-hero {
+        padding: 72px 0 52px;
+      }
+      .interior-heading h1 {
+        margin: 0;
+        font-size: clamp(3rem, 7vw, 5.7rem);
+        font-weight: 800;
+        letter-spacing: -0.06em;
+        line-height: 0.94;
+      }
+      .interior-heading > p:last-child {
+        max-width: 760px;
+        margin: 24px 0 0;
+        color: var(--muted);
+        font-size: 1.08rem;
+        line-height: 1.65;
+      }
+      .resource-panel {
+        padding: 42px;
+        border-top: 8px solid var(--gold);
+        background: var(--mist);
+      }
+      .status-label {
+        margin: 0 0 13px;
+        color: var(--forest);
+        font-size: 0.73rem;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+      .resource-panel h2 {
+        margin: 0 0 12px;
+        font-size: clamp(1.8rem, 4vw, 2.75rem);
+        letter-spacing: -0.04em;
+      }
+      .resource-panel > p:not(.status-label) {
+        max-width: 760px;
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+      .video-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 30px;
+      }
+      .video-item {
+        display: grid;
+        grid-template-columns: 66px minmax(0, 1fr) auto;
+        gap: 16px;
+        align-items: center;
+        min-height: 106px;
+        padding: 15px 18px 15px 0;
+        border: 1px solid var(--line);
+        background: var(--white);
+        text-align: left;
+      }
+      .video-number {
+        display: grid;
+        align-self: stretch;
+        place-items: center;
+        background: var(--forest-deep);
+        color: var(--gold);
+        font-size: 0.78rem;
+        font-weight: 900;
+      }
+      .video-title {
+        font-size: 0.98rem;
+        font-weight: 800;
+        line-height: 1.35;
+      }
+      .video-meta {
+        display: block;
+        margin-top: 7px;
+        color: var(--muted);
+        font-size: 0.75rem;
+        font-weight: 400;
+      }
+      .video-play {
+        display: grid;
+        width: 36px;
+        height: 36px;
+        place-items: center;
+        border: 2px solid var(--forest);
+        border-radius: 50%;
+        color: var(--forest);
+        font-size: 0.78rem;
+      }
+      .video-item:hover {
+        border-color: var(--forest);
+        box-shadow: 0 8px 22px rgb(19 65 34 / 10%);
+      }
+      .video-item.is-active {
+        border-color: var(--violet);
+        box-shadow:
+          inset 0 0 0 2px var(--violet),
+          0 8px 22px rgb(19 65 34 / 10%);
+      }
+      .video-item.is-active .video-play {
+        border-color: var(--violet);
+        background: var(--violet);
+        color: var(--white);
+      }
+      .video-player-panel {
+        margin-top: 30px;
+        padding: 22px;
+        background: var(--charcoal);
+        color: var(--white);
+      }
+      .video-player-header {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 16px;
+      }
+      .video-player-header h3 {
+        margin: 4px 0 0;
+        font-size: clamp(1.25rem, 3vw, 1.8rem);
+        line-height: 1.2;
+      }
+      .video-player-label {
+        margin: 0;
+        color: var(--gold);
+        font-size: 0.7rem;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+      .video-close {
+        flex: 0 0 auto;
+        padding: 8px 10px;
+        border: 1px solid rgb(255 255 255 / 45%);
+        background: transparent;
+        color: var(--white);
+        cursor: pointer;
+        font-size: 0.75rem;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+      .video-close:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+      }
+      .video-frame-wrap {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%;
+        overflow: hidden;
+        background: #000;
+      }
+      .video-frame-wrap iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      .connection-note {
+        margin-top: 22px !important;
+        padding: 14px 16px;
+        border-left: 4px solid var(--gold);
+        background: var(--white);
+        font-size: 0.88rem;
+      }
+      .tool-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 30px;
+      }
+      .tool-card {
+        display: flex;
+        min-height: 190px;
+        flex-direction: column;
+        padding: 22px;
+        border: 1px solid var(--line);
+        background: var(--white);
+      }
+      .tool-card h3 {
+        margin: 12px 0 8px;
+        font-size: 1.25rem;
+      }
+      .tool-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.55;
+      }
+      .tool-link {
+        margin-top: auto;
+        padding-top: 20px;
+        color: var(--forest);
+        font-size: 0.76rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+      .tool-card:hover {
+        border-color: var(--violet);
+      }
+      .reference-section + .reference-section {
+        margin-top: 42px;
+        padding-top: 42px;
+        border-top: 1px solid var(--line);
+      }
+      .reference-heading {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 18px;
+      }
+      .reference-heading h2 {
+        margin: 0;
+        font-size: 1.65rem;
+      }
+      .search-label {
+        display: grid;
+        gap: 6px;
+        color: var(--muted);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .search-input {
+        width: min(320px, 70vw);
+        padding: 11px 13px;
+        border: 1px solid #aeb9af;
+        background: var(--white);
+        color: var(--ink);
+      }
+      .table-wrap {
+        overflow-x: auto;
+        border: 1px solid var(--line);
+        background: var(--white);
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 11px 14px;
+        border-bottom: 1px solid #e4e9e2;
+        text-align: left;
+      }
+      th {
+        position: sticky;
+        top: 0;
+        background: var(--forest-deep);
+        color: var(--white);
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      td:first-child {
+        width: 27%;
+        color: var(--forest-deep);
+        font-weight: 800;
+      }
+      .medical-overbar {
+        text-decoration-line: overline;
+        text-decoration-thickness: 1px;
+        text-decoration-skip-ink: none;
+      }
+      tbody tr:last-child td {
+        border-bottom: 0;
+      }
+      tbody tr:nth-child(even) {
+        background: #f7f9f5;
+      }
+      .empty-result {
+        padding: 22px;
+        color: var(--muted);
+        text-align: center;
+      }
+      .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 20px;
+      }
+      .button {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 16px;
+        border: 2px solid var(--forest);
+        background: var(--forest);
+        color: var(--white);
+        cursor: pointer;
+        font-weight: 800;
+      }
+      .back-link {
+        margin-top: 34px;
+      }
+      .toast {
+        position: fixed;
+        z-index: 60;
+        right: 20px;
+        bottom: 20px;
+        max-width: 390px;
+        padding: 15px 18px;
+        background: var(--charcoal);
+        color: var(--white);
+        box-shadow: 0 10px 35px rgb(0 0 0 / 25%);
+        font-size: 0.88rem;
+        line-height: 1.45;
+      }
+      :focus-visible {
+        outline: 3px solid var(--violet);
+        outline-offset: 4px;
+      }
       @media (max-width: 900px) {
-        .hero-grid { grid-template-columns: 1fr; gap: 34px; }
-        .activity-grid, .video-grid { grid-template-columns: 1fr; }
-        .tool-grid { grid-template-columns: 1fr 1fr; }
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 34px;
+        }
+        .activity-grid,
+        .video-grid {
+          grid-template-columns: 1fr;
+        }
+        .tool-grid {
+          grid-template-columns: 1fr 1fr;
+        }
       }
       @media (max-width: 680px) {
-        .site-nav, .hero-grid, .activities, .site-footer, .interior-nav, .interior-hero, .resource-panel { width: min(100% - 32px, var(--content-width)); }
-        .nav-links .nav-link:not(:last-child) { display: none; }
-        .hero-grid { min-height: 410px; padding: 46px 0 54px; }
-        .hero h1 { font-size: clamp(2.65rem, 13vw, 4.1rem); }
-        .activities { padding: 44px 0 62px; }
-        .activity-card { min-height: 290px; padding: 25px; }
-        .site-footer { align-items: flex-start; flex-direction: column; }
-        .footer-meta { text-align: left; }
-        .interior-hero { padding: 58px 0 42px; }
-        .resource-panel { padding: 30px 22px 40px; }
-        .video-item { grid-template-columns: 54px minmax(0, 1fr); padding-right: 14px; }
-        .video-play { display: none; }
-        .tool-grid { grid-template-columns: 1fr; }
-        .reference-heading { align-items: flex-start; flex-direction: column; }
-        .search-input { width: 100%; }
+        .hero-grid,
+        .activities,
+        .site-footer,
+        .interior-hero,
+        .resource-panel {
+          width: min(100% - 32px, var(--content-width));
+        }
+        .hero-grid {
+          min-height: 410px;
+          padding: 46px 0 54px;
+        }
+        .hero h1 {
+          font-size: clamp(2.65rem, 13vw, 4.1rem);
+        }
+        .activities {
+          padding: 44px 0 62px;
+        }
+        .activity-card {
+          min-height: 290px;
+          padding: 25px;
+        }
+        .site-footer {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+        .footer-meta {
+          text-align: left;
+        }
+        .interior-hero {
+          padding: 58px 0 42px;
+        }
+        .resource-panel {
+          padding: 30px 22px 40px;
+        }
+        .video-item {
+          grid-template-columns: 54px minmax(0, 1fr);
+          padding-right: 14px;
+        }
+        .video-play {
+          display: none;
+        }
+        .tool-grid {
+          grid-template-columns: 1fr;
+        }
+        .reference-heading {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+        .search-input {
+          width: 100%;
+        }
       }
-      @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; } }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
     </style>
   </head>
   <body>
@@ -145,68 +665,279 @@
 
     <div class="page-shell" data-view="home">
       <header class="hero">
-        <nav class="site-nav" aria-label="Primary navigation">
-          <a href="#home" class="wordmark" aria-label="Web resource home"><span class="wordmark-mark" aria-hidden="true">WR</span><span>Web Resource</span></a>
-          <div class="nav-links"><a class="nav-link" href="#videos">Videos</a><a class="nav-link" href="#references">Quick References</a></div>
-        </nav>
         <div class="hero-grid">
-          <div class="hero-copy"><p class="eyebrow">Second Edition</p><h1>Acute and Emergency Care <span>in Sports Medicine</span></h1><p class="hero-authors">Katie Walsh Flanagan, EdD, LAT, ATC &nbsp;&middot;&nbsp; Patrick Sexton, EdD, LAT, ATC</p></div>
+          <div class="hero-copy">
+            <p class="eyebrow">Second Edition</p>
+            <h1>
+              Acute and Emergency Care
+              <span>in Sports Medicine</span>
+            </h1>
+            <p class="hero-authors">Katie Walsh Flanagan, EdD, LAT, ATC &nbsp;&middot;&nbsp; Patrick Sexton, EdD, LAT, ATC</p>
+          </div>
         </div>
       </header>
       <main id="main-content">
         <section class="activities" aria-labelledby="activities-title">
-          <div class="section-heading"><p class="eyebrow eyebrow-dark">Student Resources</p><h2 id="activities-title">Choose a resource</h2><p class="section-intro">Review dislocation reduction techniques and open frequently used clinical references from one focused resource hub.</p></div>
+          <div class="section-heading">
+            <h2 id="activities-title">Student Resources</h2>
+          </div>
           <div class="activity-grid">
-            <a href="#references" class="activity-card"><div class="card-topline"><span class="activity-number">01</span><span class="card-count">Clinical tools</span></div><div><h3>Quick References</h3><p>Find common medical abbreviations, a sample AMA form, concussion assessment tools, and mental health emergency resources.</p></div><span class="activity-action">Open references <span class="activity-arrow" aria-hidden="true">&rarr;</span></span></a>
-            <a href="#videos" class="activity-card"><div class="card-topline"><span class="activity-number">02</span><span class="card-count">9 videos</span></div><div><h3>Dislocation Reduction Videos</h3><p>Watch demonstrations of patient positioning and health care provider hand placement for common joint reductions.</p></div><span class="activity-action">View video library <span class="activity-arrow" aria-hidden="true">&rarr;</span></span></a>
+            <a href="#references" class="activity-card">
+              <div class="card-topline">
+                <span class="activity-number">01</span>
+              </div>
+              <div>
+                <h3>Quick References</h3>
+                <p>Find common medical abbreviations, a sample AMA form, concussion assessment tools, and mental health emergency resources.</p>
+              </div>
+              <span class="activity-action">
+                Open references
+                <span class="activity-arrow" aria-hidden="true">&rarr;</span>
+              </span>
+            </a>
+            <a href="#videos" class="activity-card">
+              <div class="card-topline">
+                <span class="activity-number">02</span>
+              </div>
+              <div>
+                <h3>Dislocation Reduction Videos</h3>
+                <p>Watch demonstrations of patient positioning and health care provider hand placement for common joint reductions.</p>
+              </div>
+              <span class="activity-action">
+                View video library
+                <span class="activity-arrow" aria-hidden="true">&rarr;</span>
+              </span>
+            </a>
           </div>
         </section>
       </main>
-      <footer class="site-footer"><div class="footer-logo"><img src="Assets/HK logo horizontal 4C.png" alt="Human Kinetics" /></div><div class="footer-meta"><p>Acute and Emergency Care in Sports Medicine, Second Edition</p><a href="downloads/copyright-and-permissions.docx" data-placeholder-download>Copyright &amp; permissions</a></div></footer>
+      <footer class="site-footer">
+        <div class="footer-logo"><img src="Assets/HK logo horizontal 4C.png" alt="Human Kinetics" /></div>
+        <div class="footer-meta">
+          <p>Acute and Emergency Care in Sports Medicine, Second Edition</p>
+          <a href="downloads/copyright-and-permissions.docx" data-placeholder-download>Copyright &amp; permissions</a>
+        </div>
+      </footer>
     </div>
 
     <div class="interior-page" data-view="videos" hidden>
-      <nav class="interior-nav" aria-label="Page navigation"><a href="#home" class="wordmark wordmark-dark"><span class="wordmark-mark" aria-hidden="true">WR</span><span>Web Resource</span></a><a href="#home" class="interior-nav-link">Home</a></nav>
       <main id="videos-content">
-        <section class="interior-hero"><div class="interior-heading"><p class="eyebrow eyebrow-dark">Resource 01</p><h1>Dislocation Reduction Videos</h1><p>These demonstrations emphasize proper patient positioning and correct health care provider hand placement to support the best possible results.</p></div></section>
+        <section class="interior-hero">
+          <div class="interior-heading">
+            <p class="eyebrow eyebrow-dark">Resource 02</p>
+            <h1>Dislocation Reduction Videos</h1>
+          </div>
+        </section>
         <section class="resource-panel" aria-labelledby="video-library-title">
-          <p class="status-label">Chapter 14 &middot; Musculoskeletal Injuries</p><h2 id="video-library-title">Technique library</h2><p>Select a video below to watch the demonstration on this page.</p>
+          <p class="status-label">Chapter 14 &middot; Musculoskeletal Injuries</p>
+          <h2 id="video-library-title">Technique library</h2>
+          <p>Select a video below to watch the demonstration on this page.</p>
           <section class="video-player-panel" id="video-player-panel" aria-labelledby="video-player-title" hidden>
-            <div class="video-player-header"><div><p class="video-player-label">Now playing</p><h3 id="video-player-title" tabindex="-1"></h3></div><button class="video-close" id="video-close" type="button" aria-label="Close video player">Close</button></div>
+            <div class="video-player-header">
+              <div>
+                <p class="video-player-label">Now playing</p>
+                <h3 id="video-player-title" tabindex="-1"></h3>
+              </div>
+              <button class="video-close" id="video-close" type="button" aria-label="Close video player">Close</button>
+            </div>
             <div class="video-frame-wrap"><iframe id="video-frame" src="" title="" allow="encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
           </section>
           <div class="video-grid">
-            <a class="video-item" href="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402476825112" data-video-url="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402476825112"><span class="video-number">14.1</span><span class="video-title">Shoulder reduction: Boss-Holzach-Matter maneuver<span class="video-meta">Davos technique</span></span><span class="video-play" aria-hidden="true">&#9654;</span></a>
-            <a class="video-item" href="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402477995112" data-video-url="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402477995112"><span class="video-number">14.2</span><span class="video-title">Shoulder reduction: Scapular manipulation technique<span class="video-meta">Shoulder reduction</span></span><span class="video-play" aria-hidden="true">&#9654;</span></a>
-            <a class="video-item" href="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402477410112" data-video-url="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402477410112"><span class="video-number">14.3</span><span class="video-title">Shoulder reduction: Spaso technique<span class="video-meta">Shoulder reduction</span></span><span class="video-play" aria-hidden="true">&#9654;</span></a>
-            <a class="video-item" href="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402476231112" data-video-url="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402476231112"><span class="video-number">14.4</span><span class="video-title">Elbow dislocation reduction: On-field technique<span class="video-meta">Upper extremity</span></span><span class="video-play" aria-hidden="true">&#9654;</span></a>
-            <a class="video-item" href="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402477996112" data-video-url="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402477996112"><span class="video-number">14.5</span><span class="video-title">Elbow dislocation reduction: In-clinic technique<span class="video-meta">Upper extremity</span></span><span class="video-play" aria-hidden="true">&#9654;</span></a>
-            <a class="video-item" href="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402477321112" data-video-url="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402477321112"><span class="video-number">14.6</span><span class="video-title">Finger PIP dorsal dislocation reduction<span class="video-meta">Upper extremity</span></span><span class="video-play" aria-hidden="true">&#9654;</span></a>
-            <a class="video-item" href="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402478086112" data-video-url="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402478086112"><span class="video-number">14.7</span><span class="video-title">Knee dislocation reduction<span class="video-meta">Lower extremity</span></span><span class="video-play" aria-hidden="true">&#9654;</span></a>
-            <a class="video-item" href="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402476720112" data-video-url="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402476720112"><span class="video-number">14.8</span><span class="video-title">Patella dislocation reduction<span class="video-meta">Lower extremity</span></span><span class="video-play" aria-hidden="true">&#9654;</span></a>
-            <a class="video-item" href="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402476331112" data-video-url="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402476331112"><span class="video-number">14.9</span><span class="video-title">Ankle dislocation reduction<span class="video-meta">Lower extremity</span></span><span class="video-play" aria-hidden="true">&#9654;</span></a>
+            <a
+              class="video-item"
+              href="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402476825112"
+              data-video-url="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402476825112"
+            >
+              <span class="video-number">14.1</span>
+              <span class="video-title">
+                Shoulder reduction: Boss-Holzach-Matter maneuver
+                <span class="video-meta">Davos technique</span>
+              </span>
+              <span class="video-play" aria-hidden="true">&#9654;</span>
+            </a>
+            <a
+              class="video-item"
+              href="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402477995112"
+              data-video-url="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402477995112"
+            >
+              <span class="video-number">14.2</span>
+              <span class="video-title">
+                Shoulder reduction: Scapular manipulation technique
+                <span class="video-meta">Shoulder reduction</span>
+              </span>
+              <span class="video-play" aria-hidden="true">&#9654;</span>
+            </a>
+            <a
+              class="video-item"
+              href="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402477410112"
+              data-video-url="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402477410112"
+            >
+              <span class="video-number">14.3</span>
+              <span class="video-title">
+                Shoulder reduction: Spaso technique
+                <span class="video-meta">Shoulder reduction</span>
+              </span>
+              <span class="video-play" aria-hidden="true">&#9654;</span>
+            </a>
+            <a
+              class="video-item"
+              href="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402476231112"
+              data-video-url="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402476231112"
+            >
+              <span class="video-number">14.4</span>
+              <span class="video-title">
+                Elbow dislocation reduction: On-field technique
+                <span class="video-meta">Upper extremity</span>
+              </span>
+              <span class="video-play" aria-hidden="true">&#9654;</span>
+            </a>
+            <a
+              class="video-item"
+              href="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402477996112"
+              data-video-url="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402477996112"
+            >
+              <span class="video-number">14.5</span>
+              <span class="video-title">
+                Elbow dislocation reduction: In-clinic technique
+                <span class="video-meta">Upper extremity</span>
+              </span>
+              <span class="video-play" aria-hidden="true">&#9654;</span>
+            </a>
+            <a
+              class="video-item"
+              href="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402477321112"
+              data-video-url="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402477321112"
+            >
+              <span class="video-number">14.6</span>
+              <span class="video-title">
+                Finger PIP dorsal dislocation reduction
+                <span class="video-meta">Upper extremity</span>
+              </span>
+              <span class="video-play" aria-hidden="true">&#9654;</span>
+            </a>
+            <a
+              class="video-item"
+              href="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402478086112"
+              data-video-url="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402478086112"
+            >
+              <span class="video-number">14.7</span>
+              <span class="video-title">
+                Knee dislocation reduction
+                <span class="video-meta">Lower extremity</span>
+              </span>
+              <span class="video-play" aria-hidden="true">&#9654;</span>
+            </a>
+            <a
+              class="video-item"
+              href="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402476720112"
+              data-video-url="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402476720112"
+            >
+              <span class="video-number">14.8</span>
+              <span class="video-title">
+                Patella dislocation reduction
+                <span class="video-meta">Lower extremity</span>
+              </span>
+              <span class="video-play" aria-hidden="true">&#9654;</span>
+            </a>
+            <a
+              class="video-item"
+              href="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402476331112"
+              data-video-url="https://players.brightcove.net/901973548001/default_default/index.html?videoId=6402476331112"
+            >
+              <span class="video-number">14.9</span>
+              <span class="video-title">
+                Ankle dislocation reduction
+                <span class="video-meta">Lower extremity</span>
+              </span>
+              <span class="video-play" aria-hidden="true">&#9654;</span>
+            </a>
           </div>
-          <p class="connection-note"><strong>Clinical reminder:</strong> Follow applicable laws, standing orders, supervising physician protocols, and scope-of-practice requirements when applying these techniques.</p><a href="#home" class="back-link">&larr; Back to all resources</a>
+          <p class="connection-note">
+            <strong>Clinical reminder:</strong>
+            Follow applicable laws, standing orders, supervising physician protocols, and scope-of-practice requirements when applying these techniques.
+          </p>
+          <a href="#home" class="back-link">&larr; Back to all resources</a>
         </section>
       </main>
     </div>
 
     <div class="interior-page" data-view="references" hidden>
-      <nav class="interior-nav" aria-label="Page navigation"><a href="#home" class="wordmark wordmark-dark"><span class="wordmark-mark" aria-hidden="true">WR</span><span>Web Resource</span></a><a href="#home" class="interior-nav-link">Home</a></nav>
       <main id="references-content">
-        <section class="interior-hero"><div class="interior-heading"><p class="eyebrow eyebrow-dark">Resource 02</p><h1>Quick References</h1><p>Use these practical references during coursework and skills practice. Clinical tools should be administered by appropriately trained health care professionals.</p></div></section>
+        <section class="interior-hero">
+          <div class="interior-heading">
+            <p class="eyebrow eyebrow-dark">Resource 01</p>
+            <h1>Quick References</h1>
+          </div>
+        </section>
         <section class="resource-panel">
-          <section class="reference-section" aria-labelledby="abbreviations-title"><div class="reference-heading"><div><p class="status-label">Table 2.5</p><h2 id="abbreviations-title">Common Medical Abbreviations Used in Prehospital Care Reports</h2><div class="button-row"><a class="button" href="downloads/common-medical-abbreviations.pdf" download>Download PDF</a></div></div><label class="search-label">Filter abbreviations<input id="abbreviation-search" class="search-input" type="search" placeholder="Try: pulse, IV, EMS..." autocomplete="off" /></label></div><div class="table-wrap"><table><thead><tr><th scope="col">Abbreviation</th><th scope="col">Meaning</th></tr></thead><tbody id="abbreviation-body"></tbody></table><p class="empty-result" id="empty-result" hidden>No matching abbreviations found.</p></div></section>
-          <section class="reference-section" aria-labelledby="ama-title"><p class="status-label">Chapter 2</p><h2 id="ama-title">Sample AMA Form</h2><p>A printable instructional sample for documenting refusal of care or transportation against medical advice.</p><div class="button-row"><a class="button" href="downloads/sample-ama-form.pdf" download>Download PDF</a></div></section>
-          <section class="reference-section" aria-labelledby="external-tools-title"><p class="status-label">Chapter 7</p><h2 id="external-tools-title">Concussion Assessment Resources</h2><div class="tool-grid">
-            <a class="tool-card" href="https://completeconcussions.com/wp-content/uploads/2023/06/SCAT6.pdf" target="_blank" rel="noopener noreferrer"><h3>SCAT-6 Form</h3><p>Open the Sport Concussion Assessment Tool 6 form for use by appropriately trained health care professionals.</p><span class="tool-link">Open SCAT-6 form &nearr;</span></a>
-            <a class="tool-card" href="https://health.mil/Reference-Center/Publications/2020/07/31/Vestibular-Ocular-Motor-Screening-VOMS" target="_blank" rel="noopener noreferrer"><h3>VOMs Tool</h3><p>Vestibular/Ocular-Motor Screening for Concussion instructions from the Traumatic Brain Injury Center of Excellence.</p><span class="tool-link">Open VOMs tool &nearr;</span></a>
-          </div></section>
-          <section class="reference-section" aria-labelledby="mental-health-title"><p class="status-label">Chapter 16</p><h2 id="mental-health-title">Mental Health Emergencies</h2><p>Quick access to crisis-support information, suicide-prevention training, and mental wellbeing resources.</p><div class="tool-grid">
-            <a class="tool-card" href="https://www.samhsa.gov/sites/default/files/988-factsheet.pdf" target="_blank" rel="noopener noreferrer"><h3>988 Suicide &amp; Crisis Lifeline Fact Sheet</h3><p>Review SAMHSA information about accessing the 988 Lifeline by call, text, or chat.</p><span class="tool-link">Open 988 fact sheet &nearr;</span></a>
-            <a class="tool-card" href="https://qprinstitute.com/" target="_blank" rel="noopener noreferrer"><h3>QPR Institute</h3><p>Explore Question, Persuade, Refer training and suicide-prevention resources.</p><span class="tool-link">Visit QPR Institute &nearr;</span></a>
-            <a class="tool-card" href="https://www.thenationalcouncil.org/" target="_blank" rel="noopener noreferrer"><h3>National Council for Mental Wellbeing</h3><p>Access mental health, substance use, training, policy, and community-support resources.</p><span class="tool-link">Visit National Council &nearr;</span></a>
-          </div></section>
+          <section class="reference-section" aria-labelledby="abbreviations-title">
+            <div class="reference-heading">
+              <div>
+                <p class="status-label">Table 2.5</p>
+                <h2 id="abbreviations-title">Common Medical Abbreviations Used in Prehospital Care Reports</h2>
+                <div class="button-row"><a class="button" href="downloads/common-medical-abbreviations.pdf" download>Download PDF</a></div>
+              </div>
+              <label class="search-label">
+                Filter abbreviations
+                <input id="abbreviation-search" class="search-input" type="search" placeholder="Try: pulse, IV, EMS..." autocomplete="off" />
+              </label>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Abbreviation</th>
+                    <th scope="col">Meaning</th>
+                  </tr>
+                </thead>
+                <tbody id="abbreviation-body"></tbody>
+              </table>
+              <p class="empty-result" id="empty-result" hidden>No matching abbreviations found.</p>
+            </div>
+          </section>
+          <section class="reference-section" aria-labelledby="ama-title">
+            <p class="status-label">Chapter 2</p>
+            <h2 id="ama-title">Sample AMA Form</h2>
+            <p>A printable instructional sample for documenting refusal of care or transportation against medical advice.</p>
+            <div class="button-row"><a class="button" href="downloads/sample-ama-form.pdf" download>Download PDF</a></div>
+          </section>
+          <section class="reference-section" aria-labelledby="external-tools-title">
+            <p class="status-label">Chapter 7</p>
+            <h2 id="external-tools-title">Concussion Assessment Resources</h2>
+            <div class="tool-grid">
+              <a class="tool-card" href="https://completeconcussions.com/wp-content/uploads/2023/06/SCAT6.pdf" target="_blank" rel="noopener noreferrer">
+                <h3>SCAT-6 Form</h3>
+                <p>Open the Sport Concussion Assessment Tool 6 form for use by appropriately trained health care professionals.</p>
+                <span class="tool-link">Open SCAT-6 form &nearr;</span>
+              </a>
+              <a class="tool-card" href="https://health.mil/Reference-Center/Publications/2020/07/31/Vestibular-Ocular-Motor-Screening-VOMS" target="_blank" rel="noopener noreferrer">
+                <h3>VOMs Tool</h3>
+                <p>Vestibular/Ocular-Motor Screening for Concussion instructions from the Traumatic Brain Injury Center of Excellence.</p>
+                <span class="tool-link">Open VOMs tool &nearr;</span>
+              </a>
+            </div>
+          </section>
+          <section class="reference-section" aria-labelledby="mental-health-title">
+            <p class="status-label">Chapter 16</p>
+            <h2 id="mental-health-title">Mental Health Emergencies</h2>
+            <div class="tool-grid">
+              <a class="tool-card" href="https://www.samhsa.gov/sites/default/files/988-factsheet.pdf" target="_blank" rel="noopener noreferrer">
+                <h3>988 Suicide &amp; Crisis Lifeline Fact Sheet</h3>
+                <p>Review SAMHSA information about accessing the 988 Lifeline by call, text, or chat.</p>
+                <span class="tool-link">Open 988 fact sheet &nearr;</span>
+              </a>
+              <a class="tool-card" href="https://qprinstitute.com/" target="_blank" rel="noopener noreferrer">
+                <h3>QPR Institute</h3>
+                <p>Explore Question, Persuade, Refer training and suicide-prevention resources.</p>
+                <span class="tool-link">Visit QPR Institute &nearr;</span>
+              </a>
+              <a class="tool-card" href="https://www.thenationalcouncil.org/" target="_blank" rel="noopener noreferrer">
+                <h3>National Council for Mental Wellbeing</h3>
+                <p>Access mental health, substance use, training, policy, and community-support resources.</p>
+                <span class="tool-link">Visit National Council &nearr;</span>
+              </a>
+            </div>
+          </section>
           <a href="#home" class="back-link">&larr; Back to all resources</a>
         </section>
       </main>
@@ -216,32 +947,208 @@
     <script>
       (function () {
         const abbreviations = [
-          ['p̄', 'After'], ['ā', 'Before'], ['Δ', 'Change'], ['↓', 'Decrease'], ['q̄', 'Every'], ['↑', 'Increase'], ['c̄', 'With'], ['s̄', 'Without'], ['AAA', 'Abdominal aortic aneurysm'], ['ABCs', 'Airway, breathing, circulation'], ['ABD', 'Abdomen'], ['ACLS', 'Advanced cardiac life support'], ['ALOC', 'Altered level of consciousness'], ['ALS', 'Advanced life support'], ['AMA', 'Against medical advice'], ['AMI', 'Acute myocardial infarction'], ['APAP', 'Acetaminophen'], ['ASA', 'Aspirin'], ['AVPU', 'Alert, verbal, painful, unresponsive'], ['BID', 'Twice a day'], ['BP', 'Blood pressure'], ['BS', 'Blood sugar'], ['c/c', 'Chief complaint'], ['C/O or c/o', 'Complains of'], ['CA', 'Cancer'], ['CAD', 'Coronary artery disease'], ['CHF', 'Congestive heart failure'], ['Clr', 'Clear'], ['CNS', 'Central nervous system'], ['CP', 'Chest pain'], ['CSF', 'Cerebral spinal fluid'], ['CSM', 'Circulation/sensory/motor'], ['CVA', 'Cerebral vascular accident'], ['Cx', 'Chief complaint'], ['cx', 'Chest'], ['D/C', 'Discontinue'], ['Dx', 'Diagnosis'], ['EMS', 'Emergency medical services'], ['ETOH', 'Alcohol'], ['FROM', 'Full range of motion'], ['fx', 'Fracture'], ['HA', 'Headache'], ['HTN', 'Hypertension'], ['Hx', 'History'], ['IM', 'Intramuscular'], ['IO', 'Intraosseous'], ['IV', 'Intravenous'], ['JVD', 'Jugular venous distention'], ['KVO', 'Keep vein open'], ['LOC', 'Loss of consciousness'], ['LS', 'Lung sounds'], ['MI', 'Myocardial infarction'], ['MOE', 'Moves all extremities'], ['MOI', 'Mechanism of injury'], ['N/G', 'Nasogastric'], ['N/V', 'Nausea/vomiting'], ['N/V/D', 'Nausea/vomiting/diarrhea'], ['NAD', 'No apparent distress'], ['NG', 'Nasogastric'], ['NPO', 'Nothing by mouth'], ['OD', 'Overdose'], ['OPA', 'Oropharyngeal airway'], ['P', 'Pulse'], ['PC', 'After eating'], ['PERL', 'Pupils equal and reactive'], ['PID', 'Pelvic inflammatory disease'], ['PMH', 'Previous medical history'], ['PO', 'By mouth'], ['PRN', 'Whenever necessary'], ['Pt', 'Patient'], ['PTA', 'Prior to arrival'], ['QID', '4 times/day'], ['QXh', 'Every X hours'], ['R/O', 'Rule out'], ['resp', 'Respirations'], ['Rx', 'Treatment/prescription'], ['s/s', 'Signs/symptoms'], ['SL', 'Sublingual'], ['SNT', 'Soft, nontender'], ['SOB', 'Short of breath'], ['SPO₂', 'Pulse oximeter oxygen saturation'], ['Sx', 'Symptoms'], ['Sz', 'Seizure'], ['TIA', 'Transient ischemic attack'], ['TID', '3 times/day'], ['TKO', 'To keep open'], ['U/A', 'Upon arrival'], ['UTI', 'Urinary tract infection'], ['V-Fib', 'Ventricular fibrillation'], ['V-Tac', 'Ventricular tachycardia'], ['WNL', 'Within normal limits']
+          ["p̄", "After"],
+          ["ā", "Before"],
+          ["Δ", "Change"],
+          ["↓", "Decrease"],
+          ["q̄", "Every"],
+          ["↑", "Increase"],
+          ["c̄", "With"],
+          ["s̄", "Without"],
+          ["AAA", "Abdominal aortic aneurysm"],
+          ["ABCs", "Airway, breathing, circulation"],
+          ["ABD", "Abdomen"],
+          ["ACLS", "Advanced cardiac life support"],
+          ["ALOC", "Altered level of consciousness"],
+          ["ALS", "Advanced life support"],
+          ["AMA", "Against medical advice"],
+          ["AMI", "Acute myocardial infarction"],
+          ["APAP", "Acetaminophen"],
+          ["ASA", "Aspirin"],
+          ["AVPU", "Alert, verbal, painful, unresponsive"],
+          ["BID", "Twice a day"],
+          ["BP", "Blood pressure"],
+          ["BS", "Blood sugar"],
+          ["c/c", "Chief complaint"],
+          ["C/O or c/o", "Complains of"],
+          ["CA", "Cancer"],
+          ["CAD", "Coronary artery disease"],
+          ["CHF", "Congestive heart failure"],
+          ["Clr", "Clear"],
+          ["CNS", "Central nervous system"],
+          ["CP", "Chest pain"],
+          ["CSF", "Cerebral spinal fluid"],
+          ["CSM", "Circulation/sensory/motor"],
+          ["CVA", "Cerebral vascular accident"],
+          ["Cx", "Chief complaint"],
+          ["cx", "Chest"],
+          ["D/C", "Discontinue"],
+          ["Dx", "Diagnosis"],
+          ["EMS", "Emergency medical services"],
+          ["ETOH", "Alcohol"],
+          ["FROM", "Full range of motion"],
+          ["fx", "Fracture"],
+          ["HA", "Headache"],
+          ["HTN", "Hypertension"],
+          ["Hx", "History"],
+          ["IM", "Intramuscular"],
+          ["IO", "Intraosseous"],
+          ["IV", "Intravenous"],
+          ["JVD", "Jugular venous distention"],
+          ["KVO", "Keep vein open"],
+          ["LOC", "Loss of consciousness"],
+          ["LS", "Lung sounds"],
+          ["MI", "Myocardial infarction"],
+          ["MOE", "Moves all extremities"],
+          ["MOI", "Mechanism of injury"],
+          ["N/G", "Nasogastric"],
+          ["N/V", "Nausea/vomiting"],
+          ["N/V/D", "Nausea/vomiting/diarrhea"],
+          ["NAD", "No apparent distress"],
+          ["NG", "Nasogastric"],
+          ["NPO", "Nothing by mouth"],
+          ["OD", "Overdose"],
+          ["OPA", "Oropharyngeal airway"],
+          ["P", "Pulse"],
+          ["PC", "After eating"],
+          ["PERL", "Pupils equal and reactive"],
+          ["PID", "Pelvic inflammatory disease"],
+          ["PMH", "Previous medical history"],
+          ["PO", "By mouth"],
+          ["PRN", "Whenever necessary"],
+          ["Pt", "Patient"],
+          ["PTA", "Prior to arrival"],
+          ["QID", "4 times/day"],
+          ["QXh", "Every X hours"],
+          ["R/O", "Rule out"],
+          ["resp", "Respirations"],
+          ["Rx", "Treatment/prescription"],
+          ["s/s", "Signs/symptoms"],
+          ["SL", "Sublingual"],
+          ["SNT", "Soft, nontender"],
+          ["SOB", "Short of breath"],
+          ["SPO₂", "Pulse oximeter oxygen saturation"],
+          ["Sx", "Symptoms"],
+          ["Sz", "Seizure"],
+          ["TIA", "Transient ischemic attack"],
+          ["TID", "3 times/day"],
+          ["TKO", "To keep open"],
+          ["U/A", "Upon arrival"],
+          ["UTI", "Urinary tract infection"],
+          ["V-Fib", "Ventricular fibrillation"],
+          ["V-Tac", "Ventricular tachycardia"],
+          ["WNL", "Within normal limits"],
         ];
-        const validViews = new Set(['home', 'videos', 'references']);
-        const titles = { home: 'Acute and Emergency Care in Sports Medicine, Second Edition | Web Resource', videos: 'Dislocation Reduction Videos | Acute and Emergency Care', references: 'Quick References | Acute and Emergency Care' };
-        const contentIds = { home: 'main-content', videos: 'videos-content', references: 'references-content' };
-        const tbody = document.getElementById('abbreviation-body');
-        const search = document.getElementById('abbreviation-search');
-        const empty = document.getElementById('empty-result');
-        const toast = document.getElementById('toast');
-        const playerPanel = document.getElementById('video-player-panel');
-        const playerFrame = document.getElementById('video-frame');
-        const playerTitle = document.getElementById('video-player-title');
-        const playerClose = document.getElementById('video-close');
-        const placeholderDownload = document.querySelector('[data-placeholder-download]');
+        const validViews = new Set(["home", "videos", "references"]);
+        const titles = {
+          home: "Acute and Emergency Care in Sports Medicine, Second Edition | Web Resource",
+          videos: "Dislocation Reduction Videos | Acute and Emergency Care",
+          references: "Quick References | Acute and Emergency Care",
+        };
+        const contentIds = { home: "main-content", videos: "videos-content", references: "references-content" };
+        const tbody = document.getElementById("abbreviation-body");
+        const search = document.getElementById("abbreviation-search");
+        const empty = document.getElementById("empty-result");
+        const toast = document.getElementById("toast");
+        const playerPanel = document.getElementById("video-player-panel");
+        const playerFrame = document.getElementById("video-frame");
+        const playerTitle = document.getElementById("video-player-title");
+        const playerClose = document.getElementById("video-close");
+        const placeholderDownload = document.querySelector("[data-placeholder-download]");
         let activeVideoLink = null;
         let toastTimer;
-        function renderAbbreviations(query) { const term = (query || '').trim().toLowerCase(); const matches = abbreviations.filter(function (item) { return item.join(' ').toLowerCase().includes(term); }); tbody.innerHTML = matches.map(function (item) { return '<tr><td>' + item[0] + '</td><td>' + item[1] + '</td></tr>'; }).join(''); empty.hidden = matches.length > 0; }
-        function closePlayer(restoreFocus) { playerFrame.src = ''; playerFrame.title = ''; playerPanel.hidden = true; if (activeVideoLink) { activeVideoLink.classList.remove('is-active'); activeVideoLink.removeAttribute('aria-current'); if (restoreFocus) { activeVideoLink.focus(); } activeVideoLink = null; } }
-        function showView() { const requested = window.location.hash.slice(1) || 'home'; const active = validViews.has(requested) ? requested : 'home'; if (active !== 'videos' && !playerPanel.hidden) { closePlayer(false); } document.querySelectorAll('[data-view]').forEach(function (view) { view.hidden = view.dataset.view !== active; }); document.title = titles[active]; document.querySelector('.skip-link').href = '#' + contentIds[active]; window.scrollTo(0, 0); }
-        function showToast(message) { window.clearTimeout(toastTimer); toast.textContent = message; toast.hidden = false; toastTimer = window.setTimeout(function () { toast.hidden = true; }, 5000); }
-        document.querySelectorAll('[data-video-url]').forEach(function (link) { link.addEventListener('click', function (event) { const url = link.dataset.videoUrl; event.preventDefault(); if (!url) { showToast('This video entry is ready. Add its final production URL to the data-video-url attribute.'); return; } if (activeVideoLink) { activeVideoLink.classList.remove('is-active'); activeVideoLink.removeAttribute('aria-current'); } activeVideoLink = link; activeVideoLink.classList.add('is-active'); activeVideoLink.setAttribute('aria-current', 'true'); const number = link.querySelector('.video-number').textContent.trim(); const titleNode = link.querySelector('.video-title').firstChild; const title = titleNode.textContent.trim(); playerTitle.textContent = 'Video ' + number + ': ' + title; playerFrame.title = playerTitle.textContent; playerFrame.src = url; playerPanel.hidden = false; window.requestAnimationFrame(function () { playerPanel.scrollIntoView({ behavior: 'smooth', block: 'start' }); playerTitle.focus({ preventScroll: true }); }); }); });
-        playerClose.addEventListener('click', function () { closePlayer(true); });
-        search.addEventListener('input', function () { renderAbbreviations(search.value); });
-        placeholderDownload.addEventListener('click', function (event) { event.preventDefault(); showToast('The copyright and permissions Word download will be added here.'); });
-        window.addEventListener('hashchange', showView);
-        renderAbbreviations(''); showView();
+        function formatAbbreviation(value) {
+          return value.replace(/([A-Za-z])\u0304/g, function (_match, letter) {
+            return '<span class="medical-overbar" aria-label="' + letter + ' with overbar">' + letter + "</span>";
+          });
+        }
+        function renderAbbreviations(query) {
+          const term = (query || "").trim().toLowerCase();
+          const matches = abbreviations.filter(function (item) {
+            return item.join(" ").toLowerCase().includes(term);
+          });
+          tbody.innerHTML = matches
+            .map(function (item) {
+              return "<tr><td>" + formatAbbreviation(item[0]) + "</td><td>" + item[1] + "</td></tr>";
+            })
+            .join("");
+          empty.hidden = matches.length > 0;
+        }
+        function closePlayer(restoreFocus) {
+          playerFrame.src = "";
+          playerFrame.title = "";
+          playerPanel.hidden = true;
+          if (activeVideoLink) {
+            activeVideoLink.classList.remove("is-active");
+            activeVideoLink.removeAttribute("aria-current");
+            if (restoreFocus) {
+              activeVideoLink.focus();
+            }
+            activeVideoLink = null;
+          }
+        }
+        function showView() {
+          const requested = window.location.hash.slice(1) || "home";
+          const active = validViews.has(requested) ? requested : "home";
+          if (active !== "videos" && !playerPanel.hidden) {
+            closePlayer(false);
+          }
+          document.querySelectorAll("[data-view]").forEach(function (view) {
+            view.hidden = view.dataset.view !== active;
+          });
+          document.title = titles[active];
+          document.querySelector(".skip-link").href = "#" + contentIds[active];
+          window.scrollTo(0, 0);
+        }
+        function showToast(message) {
+          window.clearTimeout(toastTimer);
+          toast.textContent = message;
+          toast.hidden = false;
+          toastTimer = window.setTimeout(function () {
+            toast.hidden = true;
+          }, 5000);
+        }
+        document.querySelectorAll("[data-video-url]").forEach(function (link) {
+          link.addEventListener("click", function (event) {
+            const url = link.dataset.videoUrl;
+            event.preventDefault();
+            if (!url) {
+              showToast("This video entry is ready. Add its final production URL to the data-video-url attribute.");
+              return;
+            }
+            if (activeVideoLink) {
+              activeVideoLink.classList.remove("is-active");
+              activeVideoLink.removeAttribute("aria-current");
+            }
+            activeVideoLink = link;
+            activeVideoLink.classList.add("is-active");
+            activeVideoLink.setAttribute("aria-current", "true");
+            const number = link.querySelector(".video-number").textContent.trim();
+            const titleNode = link.querySelector(".video-title").firstChild;
+            const title = titleNode.textContent.trim();
+            playerTitle.textContent = "Video " + number + ": " + title;
+            playerFrame.title = playerTitle.textContent;
+            playerFrame.src = url;
+            playerPanel.hidden = false;
+            window.requestAnimationFrame(function () {
+              playerPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+              playerTitle.focus({ preventScroll: true });
+            });
+          });
+        });
+        playerClose.addEventListener("click", function () {
+          closePlayer(true);
+        });
+        search.addEventListener("input", function () {
+          renderAbbreviations(search.value);
+        });
+        placeholderDownload.addEventListener("click", function (event) {
+          event.preventDefault();
+          showToast("The copyright and permissions Word download will be added here.");
+        });
+        window.addEventListener("hashchange", showView);
+        renderAbbreviations("");
+        showView();
       })();
     </script>
   </body>
