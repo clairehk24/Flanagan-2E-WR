@@ -243,7 +243,7 @@
       }
       .footer-logo img {
         display: block;
-        width: min(220px, 54vw);
+        width: min(190px, 48vw);
         height: auto;
       }
       .footer-meta {
@@ -715,7 +715,7 @@
         <div class="footer-logo"><img src="Assets/HK logo horizontal 4C.png" alt="Human Kinetics" /></div>
         <div class="footer-meta">
           <p>Acute and Emergency Care in Sports Medicine, Second Edition</p>
-          <a href="downloads/copyright-and-permissions.docx" data-placeholder-download>Copyright &amp; permissions</a>
+          <a href="downloads/Flanagan%202e%20AWS%20WR%20Copyright%20Page%20.docx">Copyright &amp; Permissions</a>
         </div>
       </footer>
     </div>
@@ -1054,7 +1054,6 @@
         const playerFrame = document.getElementById("video-frame");
         const playerTitle = document.getElementById("video-player-title");
         const playerClose = document.getElementById("video-close");
-        const placeholderDownload = document.querySelector("[data-placeholder-download]");
         let activeVideoLink = null;
         let toastTimer;
         function formatAbbreviation(value) {
@@ -1141,10 +1140,6 @@
         });
         search.addEventListener("input", function () {
           renderAbbreviations(search.value);
-        });
-        placeholderDownload.addEventListener("click", function (event) {
-          event.preventDefault();
-          showToast("The copyright and permissions Word download will be added here.");
         });
         window.addEventListener("hashchange", showView);
         renderAbbreviations("");
