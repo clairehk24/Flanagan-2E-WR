@@ -201,7 +201,7 @@
         align-items: center;
       }
       .activity-number {
-        color: #89948c;
+        color: var(--muted);
         font-size: 0.8rem;
         font-weight: 800;
         letter-spacing: 0.16em;
@@ -584,6 +584,10 @@
         outline: 3px solid var(--violet);
         outline-offset: 4px;
       }
+      .hero :focus-visible,
+      .video-player-panel :focus-visible {
+        outline-color: var(--gold);
+      }
       @media (max-width: 900px) {
         .hero-grid {
           grid-template-columns: 1fr;
@@ -668,7 +672,7 @@
         <div class="hero-grid">
           <div class="hero-copy">
             <p class="eyebrow">Second Edition</p>
-            <h1>
+            <h1 tabindex="-1">
               Acute and Emergency Care
               <span>in Sports Medicine</span>
             </h1>
@@ -725,7 +729,7 @@
         <section class="interior-hero">
           <div class="interior-heading">
             <p class="eyebrow eyebrow-dark">Resource 02</p>
-            <h1>Dislocation Reduction Videos</h1>
+            <h1 tabindex="-1">Dislocation Reduction Videos</h1>
           </div>
         </section>
         <section class="resource-panel" aria-labelledby="video-library-title">
@@ -866,7 +870,7 @@
         <section class="interior-hero">
           <div class="interior-heading">
             <p class="eyebrow eyebrow-dark">Resource 01</p>
-            <h1>Quick References</h1>
+            <h1 tabindex="-1">Quick References</h1>
           </div>
         </section>
         <section class="resource-panel">
@@ -892,7 +896,7 @@
                 </thead>
                 <tbody id="abbreviation-body"></tbody>
               </table>
-              <p class="empty-result" id="empty-result" hidden>No matching abbreviations found.</p>
+              <p class="empty-result" id="empty-result" role="status" aria-live="polite" hidden>No matching abbreviations found.</p>
             </div>
           </section>
           <section class="reference-section" aria-labelledby="ama-title">
@@ -1058,7 +1062,7 @@
         let toastTimer;
         function formatAbbreviation(value) {
           return value.replace(/([A-Za-z])\u0304/g, function (_match, letter) {
-            return '<span class="medical-overbar" aria-label="' + letter + ' with overbar">' + letter + "</span>";
+            return '<span class="medical-overbar" role="img" aria-label="' + letter + ' with overbar">' + letter + "</span>";
           });
         }
         function renderAbbreviations(query) {
@@ -1086,9 +1090,12 @@
             activeVideoLink = null;
           }
         }
-        function showView() {
+        function showView(moveFocus) {
           const requested = window.location.hash.slice(1) || "home";
-          const active = validViews.has(requested) ? requested : "home";
+          const contentView = Object.keys(contentIds).find(function (view) {
+            return contentIds[view] === requested;
+          });
+          const active = validViews.has(requested) ? requested : contentView || "home";
           if (active !== "videos" && !playerPanel.hidden) {
             closePlayer(false);
           }
@@ -1098,6 +1105,12 @@
           document.title = titles[active];
           document.querySelector(".skip-link").href = "#" + contentIds[active];
           window.scrollTo(0, 0);
+          if (moveFocus && validViews.has(requested)) {
+            const heading = document.querySelector('[data-view="' + active + '"] h1');
+            if (heading) {
+              heading.focus({ preventScroll: true });
+            }
+          }
         }
         function showToast(message) {
           window.clearTimeout(toastTimer);
@@ -1141,9 +1154,11 @@
         search.addEventListener("input", function () {
           renderAbbreviations(search.value);
         });
-        window.addEventListener("hashchange", showView);
+        window.addEventListener("hashchange", function () {
+          showView(true);
+        });
         renderAbbreviations("");
-        showView();
+        showView(false);
       })();
     </script>
   </body>
